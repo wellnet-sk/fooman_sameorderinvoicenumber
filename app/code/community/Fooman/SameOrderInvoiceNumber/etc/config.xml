@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Fooman_SameOrderInvoiceNumber>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
             <depends>
                 <Mage_Sales />
             </depends>
@@ -32,6 +32,9 @@
 
     <global>
         <models>
+            <sameorderinvoicenumber>
+                <class>Fooman_SameOrderInvoiceNumber_Model</class>
+            </sameorderinvoicenumber>
             <sales_mysql4>
                 <rewrite>
                     <order_invoice>Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Invoice</order_invoice>
@@ -40,6 +43,42 @@
                 </rewrite>
             </sales_mysql4>
         </models>
+        <helpers>
+            <sameorderinvoicenumber>
+                <class>Fooman_SameOrderInvoiceNumber_Helper</class>
+            </sameorderinvoicenumber>
+        </helpers>
     </global>
+    <adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <sameorderinvoicenumber>
+                                            <title>Order numbers by FOOMAN</title>
+                                        </sameorderinvoicenumber>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+	<default>
+        <config_vars><!--config values --></config_vars>
+        <sameorderinvoicenumber>
+            <settings>
+                <invoiceprefix></invoiceprefix>
+                <shipmentprefix></shipmentprefix>
+                <creditmemoprefix></creditmemoprefix>
+            </settings>
+        </sameorderinvoicenumber>
+	</default>
 
 </config>

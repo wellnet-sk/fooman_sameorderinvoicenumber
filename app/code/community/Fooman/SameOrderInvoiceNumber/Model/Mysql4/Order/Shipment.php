@@ -31,10 +31,11 @@ class Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Shipment extends Mage_Sal
             return $this;
         }
 
+        $prefix = Mage::getStoreConfig('sameorderinvoicenumber/settings/shipmentprefix',$object->getStore()->getId());
         $incrementId = Mage::getModel('sales/order')->load($object->getOrderId())->getIncrementId();
 
         if (false!==$incrementId) {
-            $object->setIncrementId($incrementId);
+            $object->setIncrementId($prefix.$incrementId);
         }
 
         return $this;

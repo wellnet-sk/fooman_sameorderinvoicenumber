@@ -32,10 +32,11 @@ class Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Creditmemo extends Mage_S
             return $this;
         }
 
+        $prefix = Mage::getStoreConfig('sameorderinvoicenumber/settings/creditmemoprefix',$object->getStore()->getId());
         $incrementId = Mage::getModel('sales/order')->load($object->getOrderId())->getIncrementId();
 
         if (false!==$incrementId) {
-            $object->setIncrementId($incrementId);
+            $object->setIncrementId($prefix.$incrementId);
         }
 
         return $this;

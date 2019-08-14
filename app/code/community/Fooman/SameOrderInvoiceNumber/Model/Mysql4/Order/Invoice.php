@@ -29,17 +29,23 @@ class Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Invoice extends Mage_Sale
         if ($object->getIncrementId()) {
             return $this;
         }
+        if(!empty($object)){
+            $storeId = $object->getStore()->getId();
+        }else{
+            $storeId = Mage::getSingleton('checkout/session')->getStore()->getId();
+        }
+        $prefix = Mage::getStoreConfig('sameorderinvoicenumber/settings/invoiceprefix',$storeId);
 
         $incrementId = Mage::getModel('sales/order')->load($object->getOrderId())->getIncrementId();
         if (empty($incrementId)){
-            $incrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId()+1;
+            $incrementId = (int)Mage::getSingleton('checkout/session')->getLastRealOrderId()+1;
         }
         if (empty($incrementId)){
             $incrementId = $this->getEntityType()->fetchNewIncrementId($object->getStoreId());
         }
 
         if (false!==$incrementId) {
-            $object->setIncrementId($incrementId);
+            $object->setIncrementId($prefix.$incrementId);
         }
 
         return $this;
