@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Fooman_SameOrderInvoiceNumber>
-            <version>1.0.3</version>
+            <version>2.0.7</version>
             <depends>
                 <Mage_Sales />
             </depends>
@@ -35,50 +35,78 @@
             <sameorderinvoicenumber>
                 <class>Fooman_SameOrderInvoiceNumber_Model</class>
             </sameorderinvoicenumber>
-            <sales_mysql4>
-                <rewrite>
-                    <order_invoice>Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Invoice</order_invoice>
-                    <order_shipment>Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Shipment</order_shipment>
-                    <order_creditmemo>Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Creditmemo</order_creditmemo>
-                </rewrite>
-            </sales_mysql4>
         </models>
         <helpers>
             <sameorderinvoicenumber>
                 <class>Fooman_SameOrderInvoiceNumber_Helper</class>
             </sameorderinvoicenumber>
         </helpers>
+        <events>
+            <sales_order_invoice_save_before>
+                <observers>
+                    <sales_order_invoice_save_before>
+                        <type>singleton</type>
+                        <class>Fooman_SameOrderInvoiceNumber_Model_Observer</class>
+                        <method>sales_order_invoice_save_before</method>
+                    </sales_order_invoice_save_before>
+                </observers>
+            </sales_order_invoice_save_before>
+            <sales_order_shipment_save_before>
+                <observers>
+                    <sales_order_shipment_save_before>
+                        <type>singleton</type>
+                        <class>Fooman_SameOrderInvoiceNumber_Model_Observer</class>
+                        <method>sales_order_shipment_save_before</method>
+                    </sales_order_shipment_save_before>
+                </observers>
+            </sales_order_shipment_save_before>
+            <sales_order_creditmemo_save_before>
+                <observers>
+                    <sales_order_creditmemo_save_before>
+                        <type>singleton</type>
+                        <class>Fooman_SameOrderInvoiceNumber_Model_Observer</class>
+                        <method>sales_order_creditmemo_save_before</method>
+                    </sales_order_creditmemo_save_before>
+                </observers>
+            </sales_order_creditmemo_save_before>
+        </events>
     </global>
     <adminhtml>
-		<acl>
-			<resources>
-				<admin>
-					<children>
-						<system>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
                             <children>
                                 <config>
                                     <children>
                                         <sameorderinvoicenumber>
-                                            <title>Order numbers by FOOMAN</title>
+                                            <title>Order numbers by Fooman</title>
                                         </sameorderinvoicenumber>
                                     </children>
                                 </config>
                             </children>
                         </system>
-					</children>
-				</admin>
-			</resources>
-		</acl>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
     </adminhtml>
-	<default>
-        <config_vars><!--config values --></config_vars>
+    <default>
         <sameorderinvoicenumber>
             <settings>
-                <invoiceprefix></invoiceprefix>
-                <shipmentprefix></shipmentprefix>
-                <creditmemoprefix></creditmemoprefix>
+                <preventduplicates>0</preventduplicates>
+                <invoiceprefix/>
+                <shipmentprefix/>
+                <creditmemoprefix/>
             </settings>
         </sameorderinvoicenumber>
-	</default>
-
+    </default>
+    <phpunit>
+        <suite>
+            <modules>
+                <Fooman_SameOrderInvoiceNumber />
+            </modules>
+        </suite>
+    </phpunit>
 </config>

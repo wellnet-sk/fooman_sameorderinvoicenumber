@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Fooman_SameOrderInvoiceNumber</name>
-    <version>1.0.3</version>
+    <version>2.0.9</version>
     <stability>stable</stability>
     <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
@@ -9,12 +9,12 @@
     <summary>Use the order number as invoice, shipment and creditmemo number.</summary>
     <description>&lt;p&gt;Use the order number as invoice,shipment and creditmemo number.&lt;/p&gt;
 
-&lt;p&gt;By default Magento keeps separate counts for order and invoice numbers. This extension ensures that when an invoice is created it uses the related order number as invoice number.&lt;/p&gt;</description>
-    <notes>fixed int to string conversion for invoice number</notes>
-    <authors><author><name>Kristof Ringleff</name><user>auto-converted</user><email>kristof@fooman.co.nz</email></author></authors>
-    <date>2009-05-27</date>
-    <time>14:16:06</time>
-    <contents><target name="mage"><dir name="app"><dir name="etc"><dir name="modules"><file name="Fooman_SameOrderInvoiceNumber.xml" hash="9c647ab0671752cda14b95db99dd7805"/></dir></dir></dir></target><target name="magecommunity"><dir name="Fooman"><dir name="SameOrderInvoiceNumber"><dir name="etc"><file name="config.xml" hash="a61bd3cee33826f7b7bfc615a09d17b2"/><file name="system.xml" hash="e06ad358458427a53e063482679de916"/></dir><dir name="Helper"><file name="Data.php" hash="2902afb6f8362656b9e1212091d04550"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Order"><file name="Creditmemo.php" hash="5c72065a6d8209377e46b6d7ed44e3b4"/><file name="Invoice.php" hash="069d711b68fd719172371778388ed5d8"/><file name="Shipment.php" hash="2b50d680179f9f90518f9016d266f4d4"/></dir></dir></dir><file name="LICENSE.txt" hash="59563e7be45096d0833dade102989042"/><file name="LICENSE_AFL.txt" hash="45a399f2095030865fb962263ccd7506"/></dir></dir></target></contents>
+        &lt;p&gt;By default Magento keeps separate counts for order and invoice numbers. This extension ensures that when an invoice is created it uses the related order number as invoice number.&lt;/p&gt;</description>
+    <notes>listen on global events to increase compatibility with other extensions</notes>
+    <authors><author><name>Kristof Ringleff</name><user>FOOMAN</user><email>kristof@fooman.co.nz</email></author><author><name>Kristof Ringleff</name><user>FOOMAN</user><email>kristof@fooman.co.nz</email></author></authors>
+    <date>2015-04-08</date>
+    <time>13:35:23</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Fooman_SameOrderInvoiceNumber.xml" hash="9c647ab0671752cda14b95db99dd7805"/></dir></target><target name="magecommunity"><dir name="Fooman"><dir name="SameOrderInvoiceNumber"><dir name="Helper"><file name="Data.php" hash="747805d9f4f2e5a4ff7fcf4bb5d965a9"/></dir><file name="LICENSE.txt" hash="458f84d7d451c25374cf54189a008a02"/><file name="LICENSE_AFL.txt" hash="b5ab2974a0b940618ba7c27921734f32"/><dir name="Model"><file name="Observer.php" hash="21cb55052e30ee890f19e546f94ab119"/></dir><dir name="etc"><file name="config.xml" hash="90c6721904b6d692285c57bf96619b3f"/><file name="system.xml" hash="902bc08c44d3473fa86fbbc8968a7f26"/></dir></dir></dir></target></contents>
     <compatible/>
-    <dependencies/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>

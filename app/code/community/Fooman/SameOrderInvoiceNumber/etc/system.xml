@@ -1,5 +1,6 @@
+<?xml version="1.0"?>
 <config>
-   <sections>
+    <sections>
         <sameorderinvoicenumber translate="label" module="sameorderinvoicenumber">
             <label>Order Numbers</label>
             <tab>sales</tab>
@@ -17,7 +18,7 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-						<invoiceprefix translate="label">
+                        <invoiceprefix translate="label">
                             <label>Invoice Prefix</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
@@ -25,7 +26,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </invoiceprefix>
-						<shipmentprefix translate="label">
+                        <shipmentprefix translate="label">
                             <label>Shipment Prefix</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>30</sort_order>
@@ -33,7 +34,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </shipmentprefix>
-						<creditmemoprefix translate="label">
+                        <creditmemoprefix translate="label">
                             <label>Creditmemo Prefix</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>40</sort_order>
@@ -45,5 +46,5 @@
                 </settings>
             </groups>
         </sameorderinvoicenumber>
-	</sections>
+    </sections>
 </config>
