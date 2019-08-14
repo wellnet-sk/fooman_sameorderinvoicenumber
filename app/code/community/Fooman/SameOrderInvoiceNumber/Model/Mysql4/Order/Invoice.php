@@ -2,9 +2,9 @@
 
 /**
  * Fooman Order = Invoice Number
- * 
+ *
  * Magento
- *  
+ *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the Open Software License (OSL 3.0)
@@ -26,17 +26,23 @@ class Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Invoice extends Mage_Sale
 {
     public function setNewIncrementId(Varien_Object $object)
     {
-
         if ($object->getIncrementId()) {
             return $this;
         }
 
         $incrementId = Mage::getModel('sales/order')->load($object->getOrderId())->getIncrementId();
+        if (empty($incrementId)){
+            $incrementId = Mage::getSingleton('checkout/session')->getLastRealOrderId()+1;
+        }
+        if (empty($incrementId)){
+            $incrementId = $this->getEntityType()->fetchNewIncrementId($object->getStoreId());
+        }
 
         if (false!==$incrementId) {
             $object->setIncrementId($incrementId);
         }
 
         return $this;
+
     }
 }

@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Fooman_SameOrderInvoiceNumber>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
             <depends>
                 <Mage_Sales />
             </depends>

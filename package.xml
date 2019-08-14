@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>Fooman_SameOrderInvoiceNumber</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license uri="http://www.opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
     <channel>community</channel>
@@ -10,11 +10,11 @@
     <description>&lt;p&gt;Use the order number as invoice,shipment and creditmemo number.&lt;/p&gt;
 
 &lt;p&gt;By default Magento keeps separate counts for order and invoice numbers. This extension ensures that when an invoice is created it uses the related order number as invoice number.&lt;/p&gt;</description>
-    <notes>Stable Release 1.0.0</notes>
+    <notes>fixed SQL constraint error</notes>
     <authors><author><name>Kristof Ringleff</name><user>auto-converted</user><email>kristof@fooman.co.nz</email></author></authors>
-    <date>2009-03-16</date>
-    <time>03:28:29</time>
-    <contents><target name="mage"><dir name="app"><dir name="etc"><dir name="modules"><file name="Fooman_SameOrderInvoiceNumber.xml" hash="9c647ab0671752cda14b95db99dd7805"/></dir></dir></dir></target><target name="magecommunity"><dir name="Fooman"><dir name="SameOrderInvoiceNumber"><dir name="etc"><file name="config.xml" hash="a33eeb022e1ea536eb62bf0182418467"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Order"><file name="Creditmemo.php" hash="1e9cf781d3c08e9a2f0ad87a524bf05a"/><file name="Invoice.php" hash="d22ad40409f9336610f3975821acbf53"/><file name="Shipment.php" hash="360f85d73fc4342cacf6a6049ff53315"/></dir></dir></dir><file name="LICENSE.txt" hash="59563e7be45096d0833dade102989042"/><file name="LICENSE_AFL.txt" hash="45a399f2095030865fb962263ccd7506"/></dir></dir></target></contents>
+    <date>2009-05-24</date>
+    <time>03:04:27</time>
+    <contents><target name="mage"><dir name="app"><dir name="etc"><dir name="modules"><file name="Fooman_SameOrderInvoiceNumber.xml" hash="9c647ab0671752cda14b95db99dd7805"/></dir></dir></dir></target><target name="magecommunity"><dir name="Fooman"><dir name="SameOrderInvoiceNumber"><dir name="etc"><file name="config.xml" hash="a94ea01056e65b6e1805dafae1c6e7a7"/></dir><dir name="Model"><dir name="Mysql4"><dir name="Order"><file name="Creditmemo.php" hash="1e9cf781d3c08e9a2f0ad87a524bf05a"/><file name="Invoice.php" hash="fe9cc4a9941fa4bdbe134d8585d51fb1"/><file name="Shipment.php" hash="360f85d73fc4342cacf6a6049ff53315"/></dir></dir></dir><file name="LICENSE.txt" hash="59563e7be45096d0833dade102989042"/><file name="LICENSE_AFL.txt" hash="45a399f2095030865fb962263ccd7506"/></dir></dir></target></contents>
     <compatible/>
     <dependencies/>
 </package>
