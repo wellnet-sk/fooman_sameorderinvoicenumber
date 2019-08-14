@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Fooman_SameOrderInvoiceNumber",
+    "type": "magento-module",
+    "license": "OSL-v3.0",
+    "homepage": "",
+    "description": "Use the order number as invoice, shipment and creditmemo number.",
+    "authors": [
+    {
+        "name": "Kristof Ringleff",
+        "email": "kristof@fooman.co.nz"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
