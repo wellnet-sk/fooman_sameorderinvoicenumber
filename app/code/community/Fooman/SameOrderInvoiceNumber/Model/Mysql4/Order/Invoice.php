@@ -45,7 +45,7 @@ class Fooman_SameOrderInvoiceNumber_Model_Mysql4_Order_Invoice extends Mage_Sale
         }
 
         if (false!==$incrementId) {
-            $object->setIncrementId($prefix.$incrementId);
+            $object->setIncrementId($prefix."$incrementId");
         }
 
         return $this;
